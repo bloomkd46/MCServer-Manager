@@ -1,18 +1,35 @@
 {
-  "name": "simple-node-website",
+  "name": "mcserver-manager",
   "version": "0.1.0",
   "description": "A simple website built with Node, Express and Pug",
   "main": "server.js",
   "scripts": {
-    "start": ""
+    "start": "npx nodemon server.js",
+    "ui": "browser-sync start --config bs-config.js"
   },
   "author": "Ayo Isaiah",
   "license": "MIT",
   "dependencies": {
     "express": "^4.16.3",
-    "pug": "^2.0.3"
+    "pug": "^3.0.2",
+    "rcon": "^1.1.0"
   },
   "devDependencies": {
-    "nodemon": "^1.19.0"
-  }
+    "browser-sync": "^2.27.5",
+    "nodemon": "^2.0.12"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bloomkd46/mcserver-manager.git"
+  },
+  "keywords": [
+    "mc",
+    "minecraft",
+    "rcon",
+    "website"
+  ],
+  "bugs": {
+    "url": "https://github.com/bloomkd46/mcserver-manager/issues"
+  },
+  "homepage": "https://github.com/bloomkd46/mcserver-manager#readme"
 }

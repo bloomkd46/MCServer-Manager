@@ -1,0 +1,26 @@
+doctype html
+html
+    head
+        title #{title}
+        link(rel='stylesheet' href='/css/style.css')
+        meta(name="viewport" content="width=device-width, initial-scale=1")
+
+    body
+        main
+            block header
+            header.header
+                h1 #{title}
+                a.button.reboot(href='/restart') ↺
+                br
+                a.button.header-tab(href=`/console`) Home
+                a.button.header-tab(href=`/`) Console
+
+
+            block tabs
+
+            block content
+            block spacer 
+                spacer.spacer
+            block footer 
+                footer.footer 
+                    p By Bloomkd46

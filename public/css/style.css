@@ -33,6 +33,7 @@ html {
 
 body {
   font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif; /* [2] */
+  background-color: #00490b;
 }
 
 
@@ -42,17 +43,58 @@ body {
 
 .header {
   width: 100%;
-  display: flex;
+  /*display: flex;*/
   justify-content: center;
   align-items: center;
-  height: 80px;
-  background-color: #525286;
-  color: #FFFFFF;
-  margin-bottom: 50px;
+  height: 10%;
+  background-color: #313131;
+  color: #616161;
+  /*margin-bottom: 50px;*/
+  text-align: center;
+  vertical-align: middle;
+
 }
+/* Tabs
+   ========================================================================== */
+.header-tab {
+  /*display: flex;*/
+  /*justify-content: center;
+  align-items: center;
+  background-color: #313131;
+  /*margin-bottom: 50px;
+  text-align: center;
+  vertical-align: middle;
+  word-spacing: 50%;*/
+  border-radius: 5px;
+  border-color: #000000;
+  color: #616161;
+}
+/* Footer
+   ========================================================================== */
 
+   .footer {
+    display: flex;
+    height: 120px;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: #313131;
+    color: #616161;
+    margin-top: 50px;
+    justify-content: center;
+    align-items: center;
+  }
+/* Spacer
+   ========================================================================== */
+   .spacer {
+    display: flex;
+    min-height: 6in;
+    flex-direction: column;
+    justify-content: space-between;
 
-
+    margin-top: 50px;
+    justify-content: center;
+    align-items: center;
+  }
 /* Homepage Container
    ========================================================================== */
 
@@ -123,7 +165,10 @@ body {
   width: 100%;
   text-decoration: none;
   text-align: center;
-  font-size: 20px
+  font-size: 20px;
+  background-color: #575757;
+  color: #000000;
+  border-radius: 5px;
 }
 
 .button-twitter {
@@ -131,3 +176,37 @@ body {
   background-color: #659AF1;
   border-radius: 5px;
 }
+.reboot {
+  width: 100%;
+  /*display: flex;*/
+  justify-content: right;
+  align-items: right;
+  height: 10%;
+  background-color: #313131;
+  color: #616161;
+  /*margin-bottom: 50px;*/
+  text-align: right;
+  vertical-align: right;
+}
+
+
+/* Console Results
+   ========================================================================== */
+   .result {
+    background: rgb(85, 85, 85);
+    text-align: center;
+    vertical-align: middle;
+    border-radius: 0px;
+    width: 100%;
+    height: 100%;
+    line-break: strict;
+   /* display: table-cell;*/
+    /*background-color: black;
+    color: #a7a7a7;*/
+
+   }
+   .command-execute {
+    
+    vertical-align: middle;
+    text-align: center;
+   }

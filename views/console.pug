@@ -1,0 +1,15 @@
+
+extends default 
+block content 
+
+    if(result)    
+        p.result #{result}
+         br 
+         a.button(href = "/console") Back
+    else 
+      form.command-execute(action = "/console/execute?command=${command}", method = "GET")
+         div
+            label.command-execute-execute(comand = "Run") Run:  
+            input.command-execute(type = "script" name = "command" placeholder = "Command")
+         br
+         button.command-execute(type = "submit") Execute

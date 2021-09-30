@@ -31,6 +31,15 @@
       "twitter": "https://twitter.com/",
       "imgSrc": "caroline-green.jpg",
       "id": "caroline"
+    },
+    {
+      "firstname": "Dumbo",
+      "lastname": "Willson",
+      "bio":"I am Dumb. Dumb as Dirt.",
+      "tagline": "Unemployed",
+      "twitter": "https://twitter.com/",
+      "imgSrc": "dumbo_ringmaster.gif",
+      "id": "dumbo"
     }
   ]
 }
