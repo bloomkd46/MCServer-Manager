@@ -9,7 +9,6 @@ const people = require('./people.json');
 var commandResult = null;
 var authenticated = false;
 var queuedCommands = [];
-//var rconError = null;
 const app = express();
 
 function sleep(milliseconds) {
