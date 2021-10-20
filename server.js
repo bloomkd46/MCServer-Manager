@@ -1,12 +1,16 @@
 const fs = require('fs')
 const express = require('express');
-var Rcon = require('rcon');
+const Rcon = require('rcon');
+const favicon = require('serve-favicon')
+const path = require('path')
 const credentials = require('./credentials.json');
 var rcon = new Rcon(credentials.host, credentials.port, credentials.password);
 const people = require('./people.json');
 var commandResult = null;
 var authenticated = false;
 var queuedCommands = [];
+var rconError = null;
+const app = express();
 
 function sleep(milliseconds) {
     const date = Date.now();
@@ -44,17 +48,16 @@ rcon.on('auth', function () {
     console.log(err);
 }).on('end', function () {
     console.log("Connection closed");
-    process.exit();
+    //process.exit();
 });
 if(credentials["enable rcon"] == true){
     console.log("Authenticating...");
     rcon.connect();
 }
-const app = express();
 
 app.set('view engine', 'pug');
-
 app.use(express.static(__dirname + '/public'));
+//app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')))
 
 app.get('/', (req, res) => {
     res.render('index', {
@@ -69,7 +72,11 @@ app.get('/console/execute', (req, res) => {
         rcon.send(command);
       } else {
         queuedCommands.push(command);
-        commandResult = "Queued"
+        commandResult = "Server Unavailable... Command Queued"
+        if(credentials["enable rcon"] == true){
+            console.log("Authenticating...");
+            rcon.connect();
+        }
       }
     res.redirect('/console')
 });
@@ -88,6 +95,10 @@ app.get('/profile', (req, res) => {
         person,
     });
 });
+/*app.get('/favicon.ico', (req, res) =>{
+    res.render('favicon.ico')
+})
+*/
 app.get('*', function(req, res){
     res.send('Sorry, this is an invalid URL.');
  });
